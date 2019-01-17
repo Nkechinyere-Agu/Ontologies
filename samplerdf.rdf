@@ -1,0 +1,29 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix g_prov: < https://idea.tw.rpi.edu/projects/heals/gprov> .
+@prefix dmto-kb: < https://idea.tw.rpi.edu/projects/heals/dmtokb> .
+@prefix dct: < http://purl.org/dc/terms/> .
+@prefix bibo: < http://bibliontology.com/index.html#> .
+@prefix dmto: < https://idea.tw.rpi.edu/projects/heals/dmto> .
+
+dmto-kb:TreatmentPlan-1	a dmto:TreatmentPlan ; 	
+	dmto:hasDrugLevel 	dmto:Monotherapy;
+	prov:wasGeneratedBy 	g_prov:Rule10 ;
+	prov:wasGeneratedBy 	g_prov:Rule11 ;
+	dmto:hasDrug 	dmto:Metformin .
+g_prov:Rule10 		a 	g_prov:FormalRule;
+	prov:wasDerivedFrom 	g_prov:ADA_Recommendation.
+g_prov:ADA_recommendation		a	g_prov:Recommendation;
+	dct:partOf	 	g_prov:ADA_Guidelines;
+	prov:hasPrimarySource		g_prov:StandardsOfCare.
+g_prov: StandardsOfCare 		a	bibo:Article;
+	dct:title			“American Diabetes Association Standards of Medical Care in Diabetes - 2018”@en ;
+	dct:date			“January 2018” ;
+	bibo:volume		“41” ;
+	bibo:issue		“1 ” ;
+	dct:publisher		“The Journal of Clinical and Applied Research and Education”@en ;
+	bibo:pageStart		“s75” ;
+	bibo:pageEnd		“s75” ;
+	bibo:uri			“http://care.diabetesjournals.org/content/41/Supplement_1/S73”	.
